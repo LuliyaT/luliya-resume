@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+    <link href="static/css/styles.css" rel="stylesheet">
+    <link href="static/purp_diamond.ico" rel="icon">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<p class="contact-text" style="margin-top: 5%;">Want to get in touch? Fill out the form, and I'll get back to you as soon as possible</p>
+
+<div class="container">
+    <form action="{{ url_for('contact') }}" method="post" novalidate>
+        <div class="row">
+            <div class="col-25">
+                <label class="name">Name</label>
+            </div><br>
+            <div class="col-75">
+                <input data-validation-required-message="Please enter your name." id="name" name="name"
+                       placeholder="Name" required
+                       type="text">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label class="email">Email Address</label>
+            </div><br>
+            <div class="col-75">
+                <input data-validation-required-message="Please enter your email address." id="email" name="email"
+                       placeholder="Email Address" required
+                       type="email">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label class="number">Phone Number</label>
+            </div><br>
+            <div class="col-75">
+                <input data-validation-required-message="Please enter your phone number." id="phone" name="phone"
+                       placeholder="Phone Number" required
+                       type="tel">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label class="message">Message</label>
+            </div><br>
+            <div class="col-75">
+                <textarea cols="50" data-validation-required-message="Please enter a message." id="message-box"
+                          name="message" placeholder="Message" required
+                          rows="8"></textarea>
+            </div>
+        </div>
+
+        <!--        <button class="submit-btn" type="submit" id="sendMessageButton">Send</button>-->
+        <div class="row">
+            <input type="submit" value="Submit">
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
