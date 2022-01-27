@@ -11,7 +11,7 @@ def home():
 
 
 @app.route('/redirect')
-def success():
+def redirect_to():
     return render_template("success.html")
 
 
@@ -20,7 +20,7 @@ def contact():
     if request.method == "POST":
         data = request.form
         send_email(data["name"], data["email"], data["phone"], data["message"])
-        return redirect(url_for('success'))
+        return redirect(url_for('redirect_to'))
     return render_template("contact.html")
 
 
